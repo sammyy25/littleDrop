@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70.9vh;
+}
+.passform {
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%vh;
+  margin-top: 12rem;
+  margin-bottom: 5rem;
+}
+.form .button {
+  background-color: #f5e9e9;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 32rem;
+  padding: 2rem;
+  border: 0.1rem #c0c0c0 solid;
+  border-radius: 0.5rem;
+  list-style-type: none;
+}
+.form-container li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+input {
+  padding: 0.1rem;
+  border: 0.1rem #c0c0c0 solid;
+  border-radius: 0.5rem;
+}
+.productHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.product-content {
+  margin: 1rem;
+  height: 100%;
+}
+.table {
+  width: 100%;
+}
+.table th {
+  text-align: left;
+}
+.table tbody > tr:nth-child(old) {
+  background-color: #f0f0f0;
+}
+@media screen and (max-width: 1299px) {
+  .form {
+    height: 77.2vh;
+  }
+}
+@media screen and (max-width: 1030px) {
+  .form {
+    height: 87vh;
+  }
+}
+@media screen and (max-width: 970px) {
+  .form {
+    height: 85.3vh;
+  }
+}
+@media screen and (max-width: 500px) {
+  .form {
+    height: 85vh;
+  }
+
+  .form-container {
+    width: 20rem;
+    padding: 0.5rem;
+  }
+  .form-container li {
+    margin-bottom: 0.5rem;
+  }
+}

@@ -1,0 +1,55 @@
+.footer {
+  background-color: black;
+  display: grid;
+  align-items: center;
+  color: antiquewhite;
+  padding-top: 20px;
+  text-align: left;
+}
+.aboutUs {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-around;
+}
+p {
+  text-align: center;
+}
+ul li {
+  text-decoration: none;
+  list-style-type: none;
+}
+#footer {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 200px;
+}
+#by {
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1299px) {
+  #footer {
+    height: 120px;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  #footer {
+    height: 100%vh;
+  }
+  .aboutUs {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #footer {
+    height: 100%vh;
+  }
+  #by h4 {
+    font-size: 10px;
+  }
+}

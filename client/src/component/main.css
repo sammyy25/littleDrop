@@ -1,0 +1,234 @@
+#mainContainer {
+  background-color: black;
+  color: antiquewhite;
+}
+
+#main {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+h1 {
+  /* color: aliceblue; */
+  color: antiquewhite;
+  font-size: 95px;
+  padding-left: 150px;
+  padding-top: 150px;
+  font-family: "Caveat", cursive;
+}
+
+#main img {
+  width: 49%;
+  height: 49%;
+}
+button {
+  background-color: orangered;
+  border-radius: 10px;
+  border: none;
+}
+
+button a {
+  text-decoration: none;
+  color: black;
+}
+button:active {
+  background-color: rgb(243, 211, 200);
+}
+button:focus {
+  outline: none;
+}
+.btn1 {
+  font-size: 30px;
+  width: 400px;
+  margin-bottom: 5px;
+  padding: 8px;
+}
+.btn2 {
+  padding: 1px;
+  font-size: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 10px;
+  color: aliceblue;
+}
+.btn2:visited {
+  background-color: rgb(212, 193, 185);
+  border: orangered;
+}
+#about {
+  background-color: rgb(233, 85, 32);
+  font-size: 20px;
+  padding: 50px;
+  padding-left: 700px;
+  padding-right: 700px;
+}
+#shop {
+  background-color: antiquewhite;
+}
+#shop h2 {
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+#products {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.items {
+  position: relative;
+}
+.fa {
+  color: orangered;
+  padding: 0px;
+  margin: 0px;
+}
+.items .dropdown-menu {
+  /* width: 250px !important; */
+  text-align: center;
+  background-color: orangered;
+  /* background-color: black;
+  color: white; */
+}
+.imgTooltip img {
+  z-index: 0;
+}
+.imgTooltip img:hover {
+  filter: blur(2px);
+  -webkit-filter: blur(3px);
+}
+.tooltipTxt {
+  visibility: hidden;
+  font-size: 35px;
+  z-index: 3;
+  position: absolute;
+  top: 4.6%;
+  left: 30%;
+  color: white;
+}
+.tooltipTxt h2 {
+  padding-top: 50px;
+}
+.imgTooltip:hover .tooltipTxt {
+  visibility: visible;
+}
+@media screen and (max-width: 1445px) {
+  #about {
+    font-size: 25px;
+    padding: 25px;
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+}
+@media screen and (max-width: 1299px) {
+  #about {
+    font-size: 25px;
+    padding: 25px;
+    padding-left: 250px;
+    padding-right: 250px;
+  }
+  h1 {
+    font-size: 92px;
+    padding-left: 100px;
+    padding-top: 100px;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  h1 {
+    font-size: 70px;
+    padding-left: 70px;
+    padding-top: 70px;
+  }
+  #products {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  #about {
+    font-size: 25px;
+    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  h1 {
+    font-size: 55px;
+    padding-left: 50px;
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #main {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+  }
+  h1 {
+    color: aliceblue;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-top: 40px;
+    font-family: "Caveat", cursive;
+  }
+  h3 {
+    font-size: 12px;
+    margin: 0;
+  }
+  #main img {
+    width: 52%;
+    height: 52%;
+  }
+  button {
+    background-color: orangered;
+    border-radius: 7px;
+    border: none;
+  }
+  .btn1 {
+    font-size: 12px;
+    width: 130px;
+    margin-bottom: 5px;
+    padding: 4px;
+  }
+  .btn2 {
+    padding: 1px;
+    font-size: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #about {
+    font-size: 15px;
+    padding: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  #shop h2 {
+    padding: 5px;
+    font-size: 18px;
+  }
+  #products {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  #products img {
+    height: 70%;
+    width: 70%;
+  }
+  .imgTooltip img:hover {
+    filter: blur(1.5px);
+    -webkit-filter: blur(1.5px);
+  }
+  .tooltipTxt {
+    visibility: hidden;
+    font-size: 18px;
+    z-index: 3;
+    position: absolute;
+    top: 10.6%;
+    left: 30%;
+    color: white;
+  }
+  .tooltipTxt h2 {
+    padding-top: 50px;
+  }
+}

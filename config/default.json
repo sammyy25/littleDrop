@@ -1,0 +1,5 @@
+{
+    "dbURI": "mongodb+srv://sammyy25:tijjany25@sammyy25.lk1yi.mongodb.net/myEcommerce?retryWrites=true&w=majority",
+    "payStackKey": "pk_test_d41b49c9521d97c0652219a53695f7b6e7f52d0e",
+    "jwtsecret": ""
+}
