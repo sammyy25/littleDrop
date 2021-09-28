@@ -43,7 +43,7 @@
     "nodemon": "^2.0.7"
   },
   "scripts": {
-    "start": "nodemon --watch backend --exec  babel-node server.mjs",
+    "start": "node server.mjs",
     "dev": "nodemon server.js"
   },
   "author": "",
