@@ -243,7 +243,6 @@ tbody span {
     background-color: orangered;
     align-items: center;
     display: flex;
-    /* justify-content: flex-end; */
     height: 35px;
   }
   .headerCont {
@@ -252,7 +251,7 @@ tbody span {
     align-items: center;
   }
   #logo {
-    height: 33px;
+    height: 20px;
     width: 40px;
     background-color: black;
   }
@@ -275,15 +274,19 @@ tbody span {
     align-items: center;
   }
   .sideBar {
-    position: fixed;
+    position: absolute;
     top: 2.21rem;
-    transition: all 10s ease-out;
+    transition: all 0.3s ease;
     transform: translateX(5.4rem);
-    background-color: orangered;
-    width: 17rem;
-    height: 100%;
+    background-color: white;
+    color: orangered;
+    width: 18rem;
+    height: 100vh;
     z-index: 5;
-    text-align: left;
+    text-align: center;
+  }
+  .sideBar li a {
+    color: orangered;
   }
   /* .sideBar.open {
     transform: translateX(0);
@@ -291,14 +294,16 @@ tbody span {
   } */
   .closeMenuBar {
     border-radius: 50%;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     padding-top: 0;
     transition: all 0.3s ease;
     cursor: pointer;
     position: absolute;
-    right: 0.5rem;
-    top: 0.6rem;
+    right: 0.6rem;
+    top: 0.2em;
+    background-color: white;
+    color: orangered;
   }
   nav ul {
     display: inline;
@@ -309,22 +314,6 @@ tbody span {
     font-size: 20px;
   }
 
-  .popover__content {
-    position: absolute;
-    left: -225px;
-    top: 45px;
-    padding: 0.4rem;
-    width: 300px;
-  }
-  .popover__content:before {
-    position: absolute;
-    z-index: -1;
-    content: "";
-    right: calc(50% - 110px);
-    top: -8px;
-    border-style: solid;
-    border-width: 0 20px 20px 20px;
-  }
   #cart {
     height: 20px;
     width: 30px;

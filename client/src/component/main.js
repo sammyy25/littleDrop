@@ -33,11 +33,6 @@ function Main(props) {
     </div>
     <div>
        
-        {/* <h3>{product.name} <span className="container">
-        <a href="#home" title={ product.description} data-toggle="popover" data-placement="top" className="descriprtion"
-        data-trigger="hover" data-content="Some content is">
-        <i className="fa fa-info-circle" aria-hidden="true"></i></a>
-      </span></h3> */}
      <h3>{product.name} <span className="dropdown">
                                 <span className="dropdown-toggle btntog" data-toggle="dropdown"><i className="fa fa-info-circle" aria-hidden="true"></i></span>
                                 <ul className="dropdown-menu">
@@ -48,8 +43,9 @@ function Main(props) {
                                 </ul>
                                 </span>
                                 </h3>
-        <button className="btn2" value={props.products.id} onClick={() => addToCart(product)}>ADD TO CART</button>
+        
     </div>
+    <button className="btn2" value={props.products.id} onClick={() => addToCart(product)}>ADD TO CART</button>
     </div>
    
    )) ;

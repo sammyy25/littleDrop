@@ -85,7 +85,9 @@ input {
   .form {
     height: 85vh;
   }
-
+  .form h3 {
+    font-size: 18px;
+  }
   .form-container {
     width: 20rem;
     padding: 0.5rem;

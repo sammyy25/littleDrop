@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import Header from './component/Header';
 import Main from './component/main';
 import Footer from './component/Footer';
-// import axios from 'axios';
 import Signin from './component/signin';
 import Register from './component/register';
 import Product from './component/product';
@@ -17,7 +16,6 @@ import ForgetPsw from './component/forgetpassword';
 import ChangePsw from './component/changePws';
 import { CookiesProvider } from "react-cookie";
 function App() {
-  // const [products, setProducts] = useState([]);
   const productList = useSelector(state => state.productList);
   const { products, loading, error } = productList;
   const dispatch = useDispatch();
@@ -67,5 +65,4 @@ function App() {
     
   );
 }
-
 export default App;

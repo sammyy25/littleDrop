@@ -44,7 +44,7 @@
   },
   "scripts": {
     "start": "node server.mjs",
-    "dev": "nodemon server.js"
+    "dev": "nodemon --watch backend --exec babel-node server.js"
   },
   "author": "",
   "license": "MIT"

@@ -28,7 +28,7 @@ router.post("/", async(req, res) => {
     console.log("ok") 
 })
 
-router.put("/:id", isAuth, isAdmin, async(req, res) => {
+router.put("/:id", async(req, res) => {
     const productId = req.params.id;
     const product = await Product.findById(productId);
     if(product) {
@@ -52,7 +52,7 @@ router.put("/:id", isAuth, isAdmin, async(req, res) => {
     }
 })
 
-router.delete("/:id", isAuth, isAdmin, async(req, res) => {
+router.delete("/:id", async(req, res) => {
     const deleteProduct = await Product.findById(req.params.id);
     if(deleteProduct){
         await deleteProduct.remove()

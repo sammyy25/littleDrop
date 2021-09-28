@@ -1,4 +1,3 @@
-import Cookies from 'js-cookie';
 import React,{useState} from 'react';
 import { useSelector } from 'react-redux';
 import {  Link} from 'react-router-dom';
@@ -28,15 +27,14 @@ function Header(props) {
         setActive(false)   
             }
    function handleShow() {
-        setActive(true) 
-        addValue()  
+        addValue(); 
+        setActive(true)  
     }
     function  handleCheckHide()  {
         setCheckoutActive(false)     
             }
    function handlCheckShow() {
        if(!userInfo){
-        // <Redirect to="/signin" />
         setActive(false);
         window.location.replace('./signin')
        }if(props.items.length === 0){
@@ -59,7 +57,6 @@ function Header(props) {
              value.total = value.qty * value.price
              
         }
-        console.log(qty)
         addValue()
     })
     const handleQtyIncrement = (item => {
@@ -74,21 +71,25 @@ function Header(props) {
         addValue()
     })
     const removeFromCart = (item) => {
-        const cartItems = props.items.slice()  
+        const cartItems = props.items.slice() 
         const items =  cartItems.filter((x) => x.id !== item.id);
         props.setCart([...items])
-        addValue()
+        addValue();
+        if(props.cart === 0){
+            setAmount([])
+        } 
     }  
     const addValue = function(){
         let item = props.items
         var totalAmount = []
-        item.forEach(item => {
+        item.forEach(item => {  
             const cartItems =props.items.slice()
         const index = cartItems.indexOf(item)
-        var total = cartItems[index].total + cartItems[index].price
+        let total = cartItems[index].total;
          totalAmount.push(total)
          console.log(totalAmount)
         var sum = 0
+        setAmount(cartItems[index].total)
          for(var i = 0; i < totalAmount.length; i++){
                     sum += totalAmount[i]
                     setAmount(sum)
@@ -100,7 +101,7 @@ function Header(props) {
      }
     const logout = function(){
         if(userInfo){
-        Cookies.remove('userInfo');
+        localStorage.clear('userInfo');
         window.location.replace('/')
         refreshPage()
         }
@@ -160,7 +161,7 @@ function Header(props) {
     return (<>
         
         <div className="bigScreen" id="header">
-        <a href="/index.html">
+        <a href="/">
                 <img src="Images/EMS.svg" alt="EMS LOGO" id="logo"/>
                 </a>
                
@@ -253,7 +254,7 @@ function Header(props) {
   {/*****************Header for small screen*****************/}
             <div>
             <div id="header" className="smallScreen">
-            <a href="/index.html">
+            <a href="/">
                 <img src="Images/EMS.svg" alt="EMS LOGO" id="logo"/>
                 </a>
                 <div className="headerCont">
@@ -355,6 +356,6 @@ function Header(props) {
     </>
     )
 }
-    //  }
+    
 
 export default Header

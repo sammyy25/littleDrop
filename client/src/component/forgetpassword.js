@@ -1,7 +1,6 @@
 
 import React, { useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-// import axios from 'axios';
 import {forPsw} from '../action/userAction';
 
 function ForgetPsw(props) {
@@ -22,7 +21,6 @@ function ForgetPsw(props) {
             window.alert('Invalid OTP')
         }
     }
-    
     const getCode = (e) => {
         e.preventDefault();
         dispatch(forPsw(email));
@@ -55,7 +53,7 @@ function ForgetPsw(props) {
                         <label htmlFor="otp">
                             Enter OTP sent to Your Email
                         </label>
-                        <input name="code" placeholder="Enter Code" onChange={(e) => setCode(e.target.value)} />
+                        <input type="number" name="code" placeholder="Enter Code" onChange={(e) => setCode(e.target.value)} />
                     </li>
 
                     <li>
