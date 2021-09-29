@@ -7,6 +7,7 @@ import { userRegisterReducer, userSigninReducer, getOtpReducer, confirmOtpReduce
 const userInfo = localStorage.getItem("userInfo") || null;
 const requestId = localStorage.getItem('requestId');
 const userOtp = localStorage.getItem("userOtp") || null;
+//  const products = localStorage.getItem("products") || null;
 
 const initialState = { userSignin: { userInfo }, userRegister: {userInfo}, getOtp: {requestId}, pswFor: {userOtp}}
 const reducer = combineReducers({

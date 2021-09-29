@@ -14,7 +14,6 @@ import Otp from './component/otp';
 import EmailVerifyOtp from './component/email';
 import ForgetPsw from './component/forgetpassword';
 import ChangePsw from './component/changePws';
-import { CookiesProvider } from "react-cookie";
 function App() {
   const productList = useSelector(state => state.productList);
   const { products, loading, error } = productList;
@@ -30,11 +29,11 @@ function App() {
     return () => {
 
     };
-  }, [dispatch])
+  }, [])
+  
   const [ cart, setCart] = useState([]); 
   return (
     <BrowserRouter>
-    <CookiesProvider>
     <div className="App">
           <Header items={cart}
         setCart={setCart}
@@ -60,7 +59,6 @@ function App() {
           </Switch>
           <Footer />
     </div>
-    </CookiesProvider>
     </BrowserRouter>
     
   );

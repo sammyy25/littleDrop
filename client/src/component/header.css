@@ -135,6 +135,13 @@ tbody span {
   margin: 15px;
   margin-bottom: 0;
 }
+/* .closecart {
+  float: right;
+  margin: 0.1rem;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 2rem;
+} */
 
 .checkbtn {
   display: flex;
@@ -355,6 +362,14 @@ tbody span {
   }
   #cartAmount h2 {
     font-size: 20px;
+  }
+  .checkbtn {
+    font-size: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px;
+    margin: 3px;
+    padding: 0;
   }
   .checkout {
     width: 320px;

@@ -16,7 +16,7 @@ function Signin(props) {
 
     useEffect(() =>{
         if(userInfo){
-            props.history.push('/email')
+            props.history.push('/')
         }
         return () => {
 

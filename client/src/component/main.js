@@ -8,14 +8,14 @@ function Main(props) {
     let itemInCart = false
     
     cartItems.forEach(item => {
-        if(item.id === product.id){
+        if(item._id === product._id){
             itemInCart = true
         }
     }); 
     if(!itemInCart)   {
-         product = {...product}
-        props.setCart([...props.cart, product]) 
-    }
+        product = {...product}
+     props.setCart([...props.cart, product]) 
+   }
           
      }
 

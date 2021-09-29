@@ -72,12 +72,9 @@ function Header(props) {
     })
     const removeFromCart = (item) => {
         const cartItems = props.items.slice() 
-        const items =  cartItems.filter((x) => x.id !== item.id);
+        const items =  cartItems.filter((x) => x._id !== item._id);
         props.setCart([...items])
-        addValue();
-        if(props.cart === 0){
-            setAmount([])
-        } 
+         setAmount(amountC - item.price)
     }  
     const addValue = function(){
         let item = props.items
@@ -101,7 +98,7 @@ function Header(props) {
      }
     const logout = function(){
         if(userInfo){
-        localStorage.clear('userInfo');
+        localStorage.removeItem('userInfo');
         window.location.replace('/')
         refreshPage()
         }
@@ -218,7 +215,8 @@ function Header(props) {
                     <span>{amountC}</span><br/> 
                     <div className="checkbtn">
                     <button onClick={() => handleHide()} ><a  href="#shop">Continue Shopping</a></button>
-                    <button onClick={() =>handlCheckShow()}> GO to checkout</button>
+                    <button onClick={() =>handlCheckShow()}> Go to checkout</button>
+                    <button  onClick={handleHide}>Close cart</button>
                     </div>
                 </div>
                 </div> : null }
@@ -302,7 +300,8 @@ function Header(props) {
                     <span>{amountC}</span><br/> 
                     <div className="checkbtn">
                     <button onClick={() => handleHide()} ><a  href="#shop">Continue Shopping</a></button>
-                    <button id="checkout" onClick={() =>handlCheckShow()}> GO to checkout</button>
+                    <button id="checkout" onClick={() =>handlCheckShow()}> Go to checkout</button>
+                    <button  onClick={handleHide}>Close cart</button>
                     </div>
                 </div>
                 </div> : null }
@@ -337,7 +336,7 @@ function Header(props) {
                     <button className="closeMenuBar" onClick={() => closeMenu()}>x</button>
                     <nav>
                         <ul>
-                            <li><Link to="/header" onClick={() => closeMenu()}>Home</Link></li>
+                            <li><Link to="/" onClick={() => closeMenu()}>Home</Link></li>
                             <li><Link to="/main" onClick={() => closeMenu()}>Product</Link></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#df">Blog</a></li>

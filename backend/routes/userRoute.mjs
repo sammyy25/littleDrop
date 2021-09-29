@@ -3,7 +3,8 @@ import User from '../models/userModel.mjs';
 import { getToken } from '../utl.mjs';
 import Cookie from 'js-cookie';
 import axios from 'axios';
-import { Auth } from 'two-step-auth';
+ import { Auth } from 'two-step-auth';
+// const { Auth } = require("two-step-auth");
 // const Nexmo = require('nexmo');
 
 const router = express.Router();
@@ -27,30 +28,39 @@ router.post('/signin', async (req, res) => {
     .catch((err) => console.log(err));
     if(signinUser){
         
-const emailId =  signinUser.email
-async function login(emailId) {
-// // const res = await Auth(emailId);
-// // You can follow this approach,
-// // but the second approach is suggested,
-// // as the mails will be treated as important
- const response = await Auth(emailId, "EMS")
- .then((result) => {
-  res.send({
-    _id: signinUser.id,
-    name: signinUser.name,
-    email: signinUser.email,
-    phone: signinUser.phone,
-    isAdmin: signinUser.isAdmin,
-    token: getToken(User),
-     otp:result.OTP
-  });
-  console.log(result);
-console.log(result.mail);
-console.log(result.OTP);
-console.log(result.success);
-}).catch((err) => console.log(err));
-}
-login(emailId)
+      res.send({
+        _id: signinUser.id,
+        name: signinUser.name,
+        email: signinUser.email,
+        phone: signinUser.phone,
+        isAdmin: signinUser.isAdmin,
+        token: getToken(User),
+        //  otp:result.OTP
+      });
+// const emailId =  signinUser.email
+// async function login(emailId) {
+// // // const res = await Auth(emailId);
+// // // You can follow this approach,
+// // // but the second approach is suggested,
+// // // as the mails will be treated as important
+//  const response = await Auth(emailId, "EMS")
+//  .then((result) => {
+//   res.send({
+//     _id: signinUser.id,
+//     name: signinUser.name,
+//     email: signinUser.email,
+//     phone: signinUser.phone,
+//     isAdmin: signinUser.isAdmin,
+//     token: getToken(User),
+//      otp:result.OTP
+//   });
+//   console.log(result);
+// console.log(result.mail);
+// console.log(result.OTP);
+// console.log(result.success);
+// }).catch((err) => console.log(err));
+// }
+// login(emailId)
 
     }else {
         res.status(401).send({msg:'Invalid Email or Password.'})
