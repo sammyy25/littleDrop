@@ -1,6 +1,4 @@
 
-/***********************new Project */
-
 import express from 'express';
 import data from './data.js'
 import config from './config.mjs';
@@ -30,7 +28,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use("/api/users", userRoute);
-app.use("https://littledropbackend.herokuapp.com/products", productRoute);
+app.use("api/products", productRoute);
 
 app.get('/', (req, res) => { res.send('Hello from Express!')})
 // const nexmo = new Nexmo({
@@ -110,8 +108,8 @@ app.get('/', (req, res) => { res.send('Hello from Express!')})
 //     }
 //   })
 // })
-
 if(process.env.NODE_ENV === "production"){
-  app.use(express.static('client/build'))
+  app.use(express.static('client/build'));
+
 }
 app.listen(process.env.PORT || 5000, () => console.log("Server started"))
