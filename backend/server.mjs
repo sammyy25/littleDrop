@@ -1,38 +1,3 @@
-// const express = require('express');
-// const mongoose = require('mongoose');
-// const path = require('path');
-// // const config = require('config');
-// // const mondoDb = require('mongodb')
-// require('dotenv').config()
-
-// const app = express();
-// app.use(express.json());
-// app.get("/", (req, res) => {
-//   res.send("Hello World!");
-// });
-// app.post("/post", (req, res) => {
-//   console.log("Connected to React");
-//   res.redirect("/");
-// });
-// app.use(express.static('public'))
-// app.get('/', (req, res) => {
-//   res.sendFile(__dirname + '/client/public/index.html')
-// });
-// if(process.env.NODE_ENV === 'production') {
-//     app.use(express.static('client/build'));
-//     app.get('*', (req, res) => {
-// res.sendFile(path.resolve(__dirname,'client','build','index.html'));
-//     });
-// }
-
-// const dbURI = config.get('dbURI');
-  // const port = process.env.PORT || 8080;
-//  mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
-//   .then((result) => app.listen(port))
-//   .catch((err) => console.log(err));
-
-
-// app.listen(port, () => console.log("server is running"))
 
 /***********************new Project */
 
@@ -65,9 +30,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use("/api/users", userRoute);
-app.use("/api/products", productRoute);
+app.use("https://littledropbackend.herokuapp.com/products", productRoute);
 
-// app.get('/', (req, res) => { res.send('Hello from Express!')})
+app.get('/', (req, res) => { res.send('Hello from Express!')})
 // const nexmo = new Nexmo({
 //   apikey: "5e97ad40",
 //   apiScret: "kHcGkYT28gF0X22G"
@@ -145,4 +110,8 @@ app.use("/api/products", productRoute);
 //     }
 //   })
 // })
+
+if(process.env.NODE_ENV === "production"){
+  app.use(express.static('client/build'))
+}
 app.listen(process.env.PORT || 5000, () => console.log("Server started"))
