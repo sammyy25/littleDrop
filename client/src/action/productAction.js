@@ -3,7 +3,7 @@ import {PRODUCT_DELETE_FAIL, PRODUCT_DELETE_REQUEST, PRODUCT_DELETE_SUCCESS, PRO
 const listProduct = () => async (dispatch) => {
     try{
         dispatch({type: PRODUCT_LIST_REQUEST});
-        const {data} = await axios.get('/api/products');
+        const {data} = await axios.get('https://littledropbackend.herokuapp.com/api/products');
         dispatch({type: PRODUCT_LIST_SUCCESS, payload: data});
         localStorage.setItem('products', JSON.stringify(data));
     }
@@ -17,13 +17,13 @@ const saveProduct = (product) => async(dispatch, getState) => {
         dispatch({type: PRODUCT_SAVE_REQUEST, payload: product});
         // const {userSignin: {userInfo}} = getState();
         if(!product._id){
-        const { data } = await axios.post('/api/products', product);
+        const { data } = await axios.post('https://littledropbackend.herokuapp.com/api/products', product);
         // , product, {header: {
         //     'Authorization': 'Bearer' + userInfo.token
         // }});
         dispatch({type: PRODUCT_SAVE_SUCCESS, payload: data})
         } else{
-            const {data} = await axios.put('/api/products/' + product._id, product);
+            const {data} = await axios.put('https://littledropbackend.herokuapp.com/api/products/' + product._id, product);
             dispatch({type: PRODUCT_SAVE_SUCCESS, payload: data})
         }
         
@@ -35,7 +35,7 @@ const saveProduct = (product) => async(dispatch, getState) => {
 const deleteProduct = () => async (dispatch) => {
     try{
         dispatch({type: PRODUCT_DELETE_REQUEST});
-        const {data} = await axios.delete('/api/products');
+        const {data} = await axios.delete('https://littledropbackend.herokuapp.com/api/products');
         dispatch({type: PRODUCT_DELETE_SUCCESS, payload: data, success: true});
     }
     catch(error) {

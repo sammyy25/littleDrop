@@ -5,7 +5,7 @@ import { USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_SIGNIN_FAIL, USER_REGIST
 const signin = (email, password) => async (dispatch) => {
     dispatch({type: USER_SIGNIN_REQUEST, payload: {email, password}});
     try {
-        const {data} = await axios.post("/api/users/signin", {email, password});
+        const {data} = await axios.post("https://littledropbackend.herokuapp.com/api/users/signin", {email, password});
         dispatch({type: USER_SIGNIN_SUCCESS, payload:data});
         localStorage.setItem('userInfo', JSON.stringify(data));
     } catch (error) {
@@ -16,7 +16,7 @@ const signin = (email, password) => async (dispatch) => {
 const otpRequest = (requestId) => async (dispatch) => {
     dispatch({type: OTP_REQUEST, payload: {requestId}});
     try {
-        const {data} = await axios.post("/api/users/getOtp", {requestId});
+        const {data} = await axios.post("https://littledropbackend.herokuapp.com/api/users/getOtp", {requestId});
         dispatch({type: OTP_SUCCESS, payload:data});
         localStorage.setItem('requestId', JSON.stringify(data));
         console.log(data)
@@ -28,7 +28,7 @@ const otpRequest = (requestId) => async (dispatch) => {
 const forPsw = (email, otp) => async (dispatch) => {
     dispatch({type: EMAIL_OTP_REQUEST, payload: {email, otp}});
     try {
-        const {data} = await axios.post("/api/users/getOtp", {email, otp});
+        const {data} = await axios.post("https://littledropbackend.herokuapp.com/api/users/getOtp", {email, otp});
         dispatch({type: EMAIL_OTP_SUCCESS, payload:data});
         localStorage.setItem('userOtp', JSON.stringify(data));
         console.log(data)
@@ -52,7 +52,7 @@ const confirmOtp = (result, requestId) => async (dispatch) => {
 const register = (name, email, password, phone) => async (dispatch) => {
     dispatch({type: USER_REGISTER_REQUEST, payload: {name, email, phone, password}});
     try {
-        const {data} = await axios.post("/api/users/register", {name, email, phone, password});
+        const {data} = await axios.post("https://littledropbackend.herokuapp.com/api/users/register", {name, email, phone, password});
         dispatch({type: USER_REGISTER_SUCCESS, payload:data});
         localStorage.setItem('userInfo', JSON.stringify(data));
     } catch (error) {
