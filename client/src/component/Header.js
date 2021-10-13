@@ -84,7 +84,6 @@ function Header(props) {
         const index = cartItems.indexOf(item)
         let total = cartItems[index].total;
          totalAmount.push(total)
-         console.log(totalAmount)
         var sum = 0
         setAmount(cartItems[index].total)
          for(var i = 0; i < totalAmount.length; i++){
