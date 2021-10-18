@@ -3,6 +3,7 @@
 import './main.css';
 
 function Main(props) {
+
     const addToCart = (product) => { 
     const cartItems = props.cart.slice()  
     let itemInCart = false
@@ -28,7 +29,7 @@ function Main(props) {
         <img src={product.img} alt=""/>
         <div className="tooltipTxt">
             <h2>Price</h2>
-        <span>{product.price}</span>
+        <span>{props.symbol}{props.code === "USD" ? product.price : parseInt(props.rate * product.price)}</span>
         </div>
     </div>
     <div>
@@ -37,7 +38,7 @@ function Main(props) {
                                 <span className="dropdown-toggle btntog" data-toggle="dropdown"><i className="fa fa-info-circle" aria-hidden="true"></i></span>
                                 <ul className="dropdown-menu">
                                 <h4> {product.name}</h4>
-                                <li><b>Price:{product.price} </b></li>
+                                <li><b>Price:{props.symbol}{props.code === "USD" ? product.price : parseInt(props.rate * product.price)} </b></li>
                                 <li><b>Color:</b> {product.color}</li>
                                 <li><b>Description:</b> {product.description} </li>
                                 </ul>

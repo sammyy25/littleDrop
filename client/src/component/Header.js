@@ -113,7 +113,7 @@ function Header(props) {
         <tr>
         <td>{idx + 1}</td>
         <td>{item.name}</td>
-        <td>{item.price}</td>
+        <td>{props.symbol}{props.code === "USD" ? item.price : parseInt(props.rate * item.price)}</td>
         <td><div className="container">
         <button onClick={ () => handleQtyDecrement(item)}>-</button>
         <span>{item.qty}</span>
@@ -130,7 +130,7 @@ function Header(props) {
             <tr>
             <td>{idx + 1}</td>
             <td>{item.name}</td>
-            <td>{item.price}</td>
+            <td>{props.symbol}{props.code === "USD" ? item.price : parseInt(props.rate) * item.price}</td>
             <td>{item.qty}</td>
             <td>{item.total}</td>
             </tr>
@@ -211,7 +211,7 @@ function Header(props) {
 
                     <div id="cartAmount">
                     <h2>Total Amount to be paid</h2>
-                    <span>{amountC}</span><br/> 
+                    <span>{props.symbol}{props.code === "USD" ? amountC : parseInt(props.rate * amountC)}</span><br/> 
                     <div className="checkbtn">
                     <button onClick={() => handleHide()} ><a  href="#shop">Continue Shopping</a></button>
                     <button onClick={() =>handlCheckShow()}> Go to checkout</button>
@@ -238,7 +238,7 @@ function Header(props) {
                         </tr>
                     </thead>
                     {cartSummary}</table>
-                    <span>Total Price: {amountC}</span>
+                    <span>Total Price: {props.symbol}{props.code === "USD" ? amountC : parseInt(props.rate) * amountC}</span>
                 </div> 
                 
                     <div className="checkbtn">  
@@ -296,7 +296,7 @@ function Header(props) {
 
                     <div id="cartAmount">
                     <h2>Total Amount to be paid</h2>
-                    <span>{amountC}</span><br/> 
+                    <span>{props.symbol}{props.code === "USD" ? amountC : parseInt(props.rate * amountC)}</span><br/> 
                     <div className="checkbtn">
                     <button onClick={() => handleHide()} ><a  href="#shop">Continue Shopping</a></button>
                     <button id="checkout" onClick={() =>handlCheckShow()}> Go to checkout</button>
@@ -323,7 +323,7 @@ function Header(props) {
                         </tr>
                     </thead>
                     {cartSummary}</table>
-                    <span>Total Price: {amountC}</span>
+                    <span>Total Price: {props.symbol}{props.code === "USD" ? amountC : parseInt(props.rate * amountC)}</span>
                 </div> 
                     <div className="checkbtn">  
                     <button id="cont">Checkout</button>
