@@ -23,7 +23,7 @@ function App() {
 const [symbol, setSymbol] = useState('');
 const [rate, setRate] = useState('');
 
- useEffect(() => {
+ useEffect( () => {
     dispatch(listProduct());
     
           var location = {
@@ -36,8 +36,8 @@ const [rate, setRate] = useState('');
             }
           };
 
-          const locate = () =>{ 
-            axios.request(location).then(function (response) {
+          const locate = (async () =>{ 
+            await axios.request(location).then(function (response) {
             setCode(response.data.currencyCode)
             console.log(code);
             setSymbol(response.data.currencySymbol);
@@ -45,7 +45,7 @@ const [rate, setRate] = useState('');
         }).catch(function (error) {
               console.error(error);
           })
-         }
+         });
         locate();
 
         var currency = {
